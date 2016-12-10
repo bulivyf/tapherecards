@@ -15,6 +15,7 @@ import com.taphere.TestCategories.BaseTests;
 import com.taphere.TestCategories.NegativeTests;
 import com.taphere.TestCategories.PerformanceTests;
 import com.taphere.TestCategories.PositiveTests;
+import com.taphere.cards.StandardDeck.CardIdEnum;
 
 /**
  * Unit tests are expected to expand as bugs arise that weren't initially identified.
@@ -25,7 +26,7 @@ public class DeckOfCardsExampleAppTestsShould {
 	
 	// ATTRIBUTES *************************************************************************
 	// System under test
-	static CardDeck _sut;
+	static CardDeckDealer _sut;
 	String[] cardNames = {
 			"Ace of Clubs",
 			"Ace of Diamonds",
@@ -83,18 +84,25 @@ public class DeckOfCardsExampleAppTestsShould {
 	
 	@BeforeClass
 	public static void setUp() {
-		_sut = new CardDeck();
+		_sut = new CardDeckDealer(new StandardDeck());
 	}
 
+	
+//	@Test
+//	public void detectAnInvalidCardId() {
+//			StandardDeck deck = new StandardDeck();
+//			String res = CardIdEnum.valueOf("blah").toString();
+//			String cardId = deck.getCardName("blah");
+//	}
+	
 	@Test
 	@Category({ BaseTests.class, PositiveTests.class })
 	public void hasAllTheExpectedCardNames() {
 		// GIVEN
 		_sut.shuffle();
 		List<String> completeDeckNameList = Arrays.asList(cardNames); 
-		
 		// WHEN
-		List<String> shuffledDeckList = Arrays.asList(_sut.getCurrectDeck());
+		List<String> shuffledDeckList = Arrays.asList(_sut.getCurrectDeckAsHumanReadableNames());
 		
 		// THEN
 		assertTrue(shuffledDeckList.containsAll(completeDeckNameList));
