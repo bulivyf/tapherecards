@@ -22,85 +22,24 @@ import com.taphere.cards.StandardDeck.CardIdEnum;
  * Generally, we should aim to test the public facing API.  
  * Note: Most of the time properties should not need testing!
  */
-public class DeckOfCardsExampleAppTestsShould {
+public class CardDeckDealerWithStandardDeckTestsShould {
 	
 	// ATTRIBUTES *************************************************************************
 	// System under test
 	static CardDeckDealer _sut;
-	String[] cardNames = {
-			"Ace of Clubs",
-			"Ace of Diamonds",
-			"Ace of Hearts",
-			"Ace of Spades",
-			"Two of Clubs",
-			"Two of Diamonds",
-			"Two of Hearts",
-			"Two of Spades",
-			"Three of Clubs",
-			"Three of Diamonds",
-			"Three of Hearts",
-			"Three of Spades",
-			"Four of Clubs",
-			"Four of Diamonds",
-			"Four of Hearts",
-			"Four of Spades",
-			"Five of Clubs",
-			"Five of Diamonds",
-			"Five of Hearts",
-			"Five of Spades",
-			"Six of Clubs",
-			"Six of Diamonds",
-			"Six of Hearts",
-			"Six of Spades",
-			"Seven of Clubs",
-			"Seven of Diamonds",
-			"Seven of Hearts",
-			"Seven of Spades",
-			"Eight of Clubs",
-			"Eight of Diamonds",
-			"Eight of Hearts",
-			"Eight of Spades",
-			"Nine of Clubs",
-			"Nine of Diamonds",
-			"Nine of Hearts",
-			"Nine of Spades",
-			"Ten of Clubs",
-			"Ten of Diamonds",
-			"Ten of Hearts",
-			"Ten of Spades",
-			"Jack of Clubs",
-			"Jack of Diamonds",
-			"Jack of Hearts",
-			"Jack of Spades",
-			"Queen of Clubs",
-			"Queen of Diamonds",
-			"Queen of Hearts",
-			"Queen of Spades",
-			"King of Clubs",
-			"King of Diamonds",
-			"King of Hearts",
-			"King of Spades",
-			};	
-	
+	StandardDeckData _data = new StandardDeckData();
+
 	@BeforeClass
 	public static void setUp() {
 		_sut = new CardDeckDealer(new StandardDeck());
 	}
-
-	
-//	@Test
-//	public void detectAnInvalidCardId() {
-//			StandardDeck deck = new StandardDeck();
-//			String res = CardIdEnum.valueOf("blah").toString();
-//			String cardId = deck.getCardName("blah");
-//	}
 	
 	@Test
 	@Category({ BaseTests.class, PositiveTests.class })
-	public void hasAllTheExpectedCardNames() {
+	public void hasAllTheExpectedCardNamesAfterShuffle() {
 		// GIVEN
 		_sut.shuffle();
-		List<String> completeDeckNameList = Arrays.asList(cardNames); 
+		List<String> completeDeckNameList = Arrays.asList(_data.getDeckNames()); 
 		// WHEN
 		List<String> shuffledDeckList = Arrays.asList(_sut.getCurrectDeckAsHumanReadableNames());
 		
