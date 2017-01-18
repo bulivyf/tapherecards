@@ -29,9 +29,9 @@ Source for the app is presented in the directory location in src//main/java/com/
 
 2) StandardDeck.java: provides a standard deck implementation covering the API methods mentioned above.
 
-3) PlayRoomApp.java: This is the Java application that runs the code, via main().
+3) CardDeckDealer.java: Performs the actions shuffle and deal_one_card with the deck of cards being used.  
 
-4) CardDeckDealer.java: Performs the actions shuffle and deal_one_card with the deck of cards being used.  
+4) PlayRoomApp.java: This is the Java application that runs the code, via main().
 
 
 TESTER NOTES
