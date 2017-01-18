@@ -4,25 +4,31 @@ Subject: Java coding assignment
 
 Author: Evan Fraser
 
-Date: 12/9/2016
+Origin Date: 12/9/2016
 
 
 INTRODUCTION
 
-Code provided is in response to textual description of the functional use of a virtual deck of cards.
+Code provided is in response to printout description for the functional use of a deck of cards.
 
-The requirements required the two base functions:
+The requirements listed the two base functions:
+
 1. shuffle(): which took a deck on 52 (or less cards) and randomly shuffle them.
+
 2. deal_one_card(): which provided a card from the current deck.
+
 
 DEVELOPER NOTES
 
 The files presented are those created with Eclipse Neon.  The project type is maven.  The pom file lists a restriction for the use of Java 1.8 only.  mvn runs should executed the BaseTests category of JUnit tests.
 
+
 Source for the app is presented in the directory location in src//main/java/com/taphere/cards/
-* CardDeck.java: hold the storage of the deck and API of the two method mentioned above.
-* DeckCharacteristics.java: holds the charac teristics of a "standard" deck of 52 cards.  
-* DeckOfCardsExampleApp.java: This is the Java application that runs the code as expressed in the paper handout.
+1) IDeckType: provides the method signatures for any deck of cards that is to be used by the dealer.
+2) StandardDeck.java: provides a standard deck implementation covering the API methods mentioned above.
+3) PlayRoomApp.java: This is the Java application that runs the code, via main().
+4) CardDeckDealer.java: Performs the actions shuffle and deal_one_card with the deck of cards being used.  
+
 
 TESTER NOTES
 
