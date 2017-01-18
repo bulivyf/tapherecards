@@ -15,7 +15,7 @@ The requirements listed the two base functions:
 
 1. shuffle(): which took a deck on 52 (or less cards) and randomly shuffle them.
 
-2. deal_one_card(): which provided a card from the current deck.
+2. deal_one_card(): which provides one card from the current deck.
 
 
 DEVELOPER NOTES
@@ -24,9 +24,13 @@ The files presented are those created with Eclipse Neon.  The project type is ma
 
 
 Source for the app is presented in the directory location in src//main/java/com/taphere/cards/
+
 1) IDeckType: provides the method signatures for any deck of cards that is to be used by the dealer.
+
 2) StandardDeck.java: provides a standard deck implementation covering the API methods mentioned above.
+
 3) PlayRoomApp.java: This is the Java application that runs the code, via main().
+
 4) CardDeckDealer.java: Performs the actions shuffle and deal_one_card with the deck of cards being used.  
 
 
