@@ -1,5 +1,3 @@
-Company: Tap Here!
-
 Subject: Java coding assignment
 
 Author: Evan Fraser
